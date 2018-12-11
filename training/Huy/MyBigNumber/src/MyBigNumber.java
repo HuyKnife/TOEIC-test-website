@@ -20,23 +20,21 @@ public class MyBigNumber {
 
         int len1 = str1.length();
         int len2 = str2.length();
-        
+
         int length = len1 < len2 ? len2 : len1;
 
         for (int i = 0; i <= length; i++) {
 
-            n1 = i < len2 ? (str2.charAt(len2 - i - 1) - '0') : 0; 
-            n2 = i < len1 ? (str1.charAt(len1 - i - 1) - '0') : 0; 
+            n1 = i < len2 ? (str2.charAt(len2 - i - 1) - '0') : 0;
+            n2 = i < len1 ? (str1.charAt(len1 - i - 1) - '0') : 0;
 
             result += ("" + (n1 + n2 + carry) % 10);
             carry = (n1 + n2 + carry) / 10;
         }
-        
+
         result = reverString(result);
 
-        System.out.println(result);
-
-        return result.toString();
+        return result.replaceFirst("^0+(?!$)", "");
     }
 
     /**
@@ -44,7 +42,7 @@ public class MyBigNumber {
      */
     public static String reverString(final String str) {
         String tmp = "";
-        String t = str;
+        String t;
 
         for (int i = str.length() - 1; i >= 0; i--) {
             tmp += str.charAt(i);
@@ -54,8 +52,4 @@ public class MyBigNumber {
         return t;
     }
 
-    public String toString() {
-        
-        return result.replaceFirst("^0+(?!$)", "");
-    }
 }
