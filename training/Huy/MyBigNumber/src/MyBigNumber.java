@@ -1,9 +1,11 @@
+import java.util.Arrays;
+
 /**
  * Sum two string class.
  */
 public class MyBigNumber {
 
-    int sum = 0; // biến chứa giá trị tổng
+    String sum = ""; // biến chứa giá trị tổng
     int carry = 0; // biến nhớ
     String result = "";
 
@@ -22,34 +24,20 @@ public class MyBigNumber {
         int len2 = str2.length();
 
         int length = len1 < len2 ? len2 : len1;
+        String[] str = new String[length + 1];
 
         for (int i = 0; i <= length; i++) {
 
             n1 = i < len2 ? (str2.charAt(len2 - i - 1) - '0') : 0;
             n2 = i < len1 ? (str1.charAt(len1 - i - 1) - '0') : 0;
 
-            result += ("" + (n1 + n2 + carry) % 10);
+            str[length - i] = ("" + (n1 + n2 + carry) % 10);
             carry = (n1 + n2 + carry) / 10;
+
         }
 
-        result = reverString(result);
+        result = String.join(",", str).replace(",", "");
 
         return result.replaceFirst("^0+(?!$)", "");
     }
-
-    /**
-     * hàm đảo ngược chuỗi.
-     */
-    public static String reverString(final String str) {
-        String tmp = "";
-        String t;
-
-        for (int i = str.length() - 1; i >= 0; i--) {
-            tmp += str.charAt(i);
-        }
-        t = tmp;
-
-        return t;
-    }
-
 }
