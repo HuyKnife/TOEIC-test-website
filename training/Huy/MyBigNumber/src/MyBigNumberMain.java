@@ -1,4 +1,4 @@
-public class MyBigNumberMain {
+public class MyBigNumberMain implements IReceiver{
 
 
     /*
@@ -7,9 +7,14 @@ public class MyBigNumberMain {
      * */
     public static void main(String[] args) {
 
-        MyBigNumber s = new MyBigNumber();
+        MyBigNumberMain main = new MyBigNumberMain();
+        MyBigNumber s = new MyBigNumber(main);
         String result = s.sum(args[1], args[2]);
-        System.out.print(result);
+        System.out.print("Result: " + result);
+    }
+
+    public void sendMessage(String str) {
+        System.out.println(str);
     }
 
 }

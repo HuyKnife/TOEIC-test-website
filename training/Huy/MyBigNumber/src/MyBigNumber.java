@@ -5,10 +5,17 @@ import java.util.Arrays;
  */
 public class MyBigNumber {
 
-    String sum = ""; // biến chứa giá trị tổng
+    private IReceiver iReceiver;
+
+    public MyBigNumber(){}
+
+    public MyBigNumber(final IReceiver iReceiver){
+        this.iReceiver = iReceiver;
+    }
+
     int carry = 0; // biến nhớ
     String result = "";
-
+    String stepMsg = "";
     /**
      * Sum two string function.
      */
@@ -31,9 +38,12 @@ public class MyBigNumber {
             n1 = i < len2 ? (str2.charAt(len2 - i - 1) - '0') : 0;
             n2 = i < len1 ? (str1.charAt(len1 - i - 1) - '0') : 0;
 
+            stepMsg = "Buoc " + (i+1) + ": " + "lay " + n1 + " cong " + n2 + " nho " + carry + " bang " + ("" + (n1 + n2 + carry));
+
             str[length - i] = ("" + (n1 + n2 + carry) % 10);
             carry = (n1 + n2 + carry) / 10;
 
+            if(n1 != 0 || n2 != 0) iReceiver.sendMessage(stepMsg);
         }
 
         result = String.join(",", str).replace(",", "");
