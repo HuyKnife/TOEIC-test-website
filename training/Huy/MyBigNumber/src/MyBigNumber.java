@@ -47,19 +47,26 @@ public class MyBigNumber {
             temp = n2 + n1 + carry;
             temp2 = temp % 10;
 
-            stepMsg = "Buoc " + (i + 1) + ": "
-                    + "lay " + n1
-                    + " cong " + n2
-                    + " nho " + carry
-                    + " bang " + temp
-                    + " viet " + temp2
-                    + " nho " + carry;
+            if (length == 1) {
+                stepMsg += "\n" + "Lay " + n1
+                        + " cong " + n2
+                        + " bang " + temp + "\n";
+            } else {
+                stepMsg += "\n" + "Buoc " + (i + 1) + ": "
+                        + "lay " + n1
+                        + " cong " + n2
+                        + " nho " + carry
+                        + " bang " + temp
+                        + " viet " + temp2
+                        + " nho " + carry + "\n";
+            }
 
             carry = temp / 10;
             res = temp2 + res;
 
-            receiver.sendMessage(stepMsg);
         }
+
+        receiver.sendMessage(stepMsg);
 
         return res;
 

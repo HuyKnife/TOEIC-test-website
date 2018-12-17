@@ -83,4 +83,21 @@ public class MyBigNumberTest{
             assertEquals("Please input numeric string or positive number", s);
         } catch (NullPointerException e) {}
     }
+
+    @org.junit.Test
+    public void sum11(){
+        try {
+            String s = myBigNumber.sum("3", "-7asdg");
+            assertEquals("Please input numeric string or positive number", s);
+        } catch (NullPointerException e) {}
+    }
+
+    @org.junit.Test
+    public void sum12(){
+        MyBigNumberMain test = new MyBigNumberMain();
+        MyBigNumber myBigNumber = new MyBigNumber(test);
+        String s = myBigNumber.sum("3", "-7asdg");
+        assertEquals("Please input numeric string or positive number", s);
+    }
+
 }

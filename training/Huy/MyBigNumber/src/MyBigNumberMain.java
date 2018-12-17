@@ -10,7 +10,7 @@ public class MyBigNumberMain implements IReceiver{
         MyBigNumberMain main = new MyBigNumberMain();
         MyBigNumber s = new MyBigNumber(main);
         String result = s.sum(args[1], args[2]);
-        System.out.print("Result: " + result);
+        System.out.println("Result: " + result + "\n");
     }
 
     public void sendMessage(String str) {
