@@ -6,23 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0ba4bdb-8843-4c72-a489-a87ef965f7b2" name="Default Changelist" comment="Add MyBigNumberMain class with main() function">
-      <change beforePath="$PROJECT_DIR$/../../MyBigNumber/.idea/artifacts/MyBigNumber_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MyBigNumber/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MyBigNumber/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MyBigNumber/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MyBigNumber/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MyBigNumber/MyBigNumber.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MyBigNumber/MyBigNumber.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MyBigNumber/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MyBigNumber/lib/hamcrest-core-1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MyBigNumber/lib/junit-4.12.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MyBigNumber/src/IReceiver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MyBigNumber/src/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MyBigNumber/src/MyBigNumber.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MyBigNumber/src/MyBigNumberMain.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MyBigNumber/src/MyBigNumberTest.java" beforeDir="false" />
-    </list>
+    <list default="true" id="a0ba4bdb-8843-4c72-a489-a87ef965f7b2" name="Default Changelist" comment="Add MyBigNumberMain class with main() function" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -346,7 +330,7 @@
       <workItem from="1545051673685" duration="4813000" />
       <workItem from="1545110631730" duration="1151000" />
       <workItem from="1545124971808" duration="963000" />
-      <workItem from="1545126958203" duration="102000" />
+      <workItem from="1545126958203" duration="196000" />
     </task>
     <task id="LOCAL-00001" summary="Add MyBigNumberMain class with main() function">
       <created>1544537920854</created>
@@ -391,7 +375,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25924000" />
+    <option name="totallyTimeSpent" value="26018000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -434,6 +418,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/../../.." />
+    </ignored-roots>
     <MESSAGE value="Add MyBigNumberMain class with main() function" />
     <option name="LAST_COMMIT_MESSAGE" value="Add MyBigNumberMain class with main() function" />
   </component>
