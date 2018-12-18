@@ -20,8 +20,7 @@ public class MyBigNumber {
 
         // Kiểm tra s1, s2 có phải chuỗi số hoặc số dương hay không
         if (!s1.matches("^[0-9]+$") || !s2.matches("^[0-9]+$")) {
-
-            return "Please input numeric string or positive number";
+            throw new NumberFormatException("The input must not contain word or negative number");
         }
 
         String res = "";                        // chuỗi chứa kết quả

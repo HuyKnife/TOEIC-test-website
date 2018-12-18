@@ -52,52 +52,46 @@ public class MyBigNumberTest{
         } catch (NullPointerException e) {}
     }
 
-    @org.junit.Test
+    @org.junit.Test(expected = NumberFormatException.class)
     public void sum7(){
         try {
             String s = myBigNumber.sum("abs", "4");
-            assertEquals("Please input numeric string or positive number", s);
         } catch (NullPointerException e) {}
     }
 
-    @org.junit.Test
+    @org.junit.Test(expected = NumberFormatException.class)
     public void sum8(){
         try {
             String s = myBigNumber.sum("-3", "4");
-            assertEquals("Please input numeric string or positive number", s);
         } catch (NullPointerException e) {}
     }
 
-    @org.junit.Test
+    @org.junit.Test(expected = NumberFormatException.class)
     public void sum9(){
         try {
             String s = myBigNumber.sum("3", "4asd");
-            assertEquals("Please input numeric string or positive number", s);
         } catch (NullPointerException e) {}
     }
 
-    @org.junit.Test
+    @org.junit.Test(expected = NumberFormatException.class)
     public void sum10(){
         try {
             String s = myBigNumber.sum("3", "-7");
-            assertEquals("Please input numeric string or positive number", s);
         } catch (NullPointerException e) {}
     }
 
-    @org.junit.Test
+    @org.junit.Test(expected = NumberFormatException.class)
     public void sum11(){
         try {
             String s = myBigNumber.sum("3", "-7asdg");
-            assertEquals("Please input numeric string or positive number", s);
         } catch (NullPointerException e) {}
     }
 
-    @org.junit.Test
+    @org.junit.Test(expected = NumberFormatException.class)
     public void sum12(){
         MyBigNumberMain test = new MyBigNumberMain();
         MyBigNumber myBigNumber = new MyBigNumber(test);
         String s = myBigNumber.sum("3", "-7asdg");
-        assertEquals("Please input numeric string or positive number", s);
     }
 
 }
