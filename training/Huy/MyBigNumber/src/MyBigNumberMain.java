@@ -18,13 +18,11 @@ public class MyBigNumberMain implements IReceiver{
         System.out.println("Welcome to Sum two number program !!!\n");
         while (!success) {
             try {
-                System.out.print("Input 1st number: ");
-                String s1 = sc.nextLine();
+                String input = sc.nextLine();
 
-                System.out.print("Input 2nd number: ");
-                String s2 = sc.nextLine();
+                String[]split = input.split(" ");
 
-                String result = s.sum(s1, s2);
+                String result = s.sum(split[1], split[2]);
                 System.out.println("Result: " + result + "\n");
 
                 success = true;
