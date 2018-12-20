@@ -19,12 +19,13 @@
     <SUITE FILE_PATH="coverage/MyBigNumber$MyBigNumberTest.ic" NAME="MyBigNumberTest Coverage Results" MODIFIED="1545289231729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="215" />
+    <option name="myElementSize" value="220" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="338186712">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -117,7 +118,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="766" />
     <option name="y" value="27" />
     <option name="width" value="980" />
@@ -160,7 +161,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545289373449" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545289386014" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -240,7 +241,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1545287778418</updated>
-      <workItem from="1545287781866" duration="1405000" />
+      <workItem from="1545287781866" duration="2133000" />
     </task>
     <servers />
   </component>
@@ -254,9 +255,12 @@
     <history-entry file="MyBigNumberTest - 2018.12.20 at 13h 59m 57s.xml">
       <configuration name="MyBigNumberTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MyBigNumberTest - 2018.12.20 at 14h 00m 41s.xml">
+      <configuration name="MyBigNumberTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1405000" />
+    <option name="totallyTimeSpent" value="2133000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
