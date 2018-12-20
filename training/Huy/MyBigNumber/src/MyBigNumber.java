@@ -47,8 +47,8 @@ public class MyBigNumber {
 
         for (i = 0; i < length; i++) {
 
-            checkS1 = i < len1 ? s1.charAt(i) : '0';
-            checkS2 = i < len2 ? s2.charAt(i) : '0';
+            checkS1 = i < len1 ? s1.charAt(i) : 0;
+            checkS2 = i < len2 ? s2.charAt(i) : 0;
 
             if (!(checkS1 >= '0' && checkS1 <= '9')) {
                 throw new NumberFormatException("Vi tri thu "
