@@ -6,6 +6,7 @@ To run the file:
    2. Input the command:  java -jar MyBigNumber.jar
 
 2018-12-21:
-Now come with .exe file.
-You can download the file on git or using this link https://drive.google.com/open?id=1v3K8nJHO9s18snrJ-DxDcjLHlwb717xg
+Now come with .exe file.  
+You can download the file on git or using this link https://drive.google.com/open?id=1v3K8nJHO9s18snrJ-DxDcjLHlwb717xg  
+
 To run the file just simply double-click
