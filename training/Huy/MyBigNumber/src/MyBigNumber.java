@@ -18,13 +18,25 @@ public class MyBigNumber {
 
     public String sum(final String s1, final String s2) {
 
-        if (s1.contains("-")) {
-            throw new NumberFormatException("So thu nhat phai la so nguyen duong");
+        String str1 = s1;                       // chuỗi chứa giá trị của s1
+        String str2 = s2;                       // chuỗi chứa giá trị của s2
+
+        if (s1 == null || s1.trim().isEmpty()) {
+            str1 = "0";
         }
 
-        if (s2.contains("-")) {
-            throw new NumberFormatException("So thu nhi phai la so nguyen duong");
+        if (s2 == null || s2.trim().isEmpty()) {
+            str2 = "0";
         }
+
+        if (str1.charAt(0) == '-') {
+            throw new NumberFormatException("Chua ho tro so am: " + s1);
+        }
+
+        if (str2.charAt(0) == '-') {
+            throw new NumberFormatException("Chua ho tro so am: " + s2);
+        }
+
 
         String res = "";                        // chuỗi chứa kết quả
         String stepMsg = "";                    // chuỗi chứa các bước trong quá trình cộng
@@ -37,8 +49,8 @@ public class MyBigNumber {
         int n1 = 0;                             // biến chứa số trong chuỗi 1
         int n2 = 0;                             // biến chứa số trong chuỗi 2
 
-        int len1 = s1.length();                 // biến chứa độ dài chuỗi 1
-        int len2 = s2.length();                 // biến chứa độ dài chuỗi 2
+        int len1 = str1.length();               // biến chứa độ dài chuỗi 1
+        int len2 = str2.length();               // biến chứa độ dài chuỗi 2
 
         char checkS1;                           // biến kiểm tra từng vị trí trong s1 có phải là số
         char checkS2;                           // biến kiểm tra từng vị trí trong s2 có phải là số
@@ -47,23 +59,24 @@ public class MyBigNumber {
 
         for (i = 0; i < length; i++) {
 
-            checkS1 = i < len1 ? s1.charAt(i) : '0';
-            checkS2 = i < len2 ? s2.charAt(i) : '0';
+            checkS1 = i < len1 ? str1.charAt(i) : '0';
+            checkS2 = i < len2 ? str2.charAt(i) : '0';
 
             if (!(checkS1 >= '0' && checkS1 <= '9')) {
                 throw new NumberFormatException("Vi tri thu "
                         + (s1.indexOf(checkS1) + 1)
-                        + " cua so thu 1 khong phai la so");
+                        + " cua so thu 1 khong phai la so: "
+                        + checkS1);
             }
 
             if (!(checkS2 >= '0' && checkS2 <= '9')) {
                 throw new NumberFormatException("Vi tri thu "
                         + (s2.indexOf(checkS1) + 1)
-                        + " cua so thu 2 khong phai la so");
+                        + " cua so thu 2 khong phai la so: " + checkS2);
             }
 
-            n1 = i < len1 ? (s1.charAt(len1 - i - 1) - '0') : 0;
-            n2 = i < len2 ? (s2.charAt(len2 - i - 1) - '0') : 0;
+            n1 = i < len1 ? (str1.charAt(len1 - i - 1) - '0') : 0;
+            n2 = i < len2 ? (str2.charAt(len2 - i - 1) - '0') : 0;
 
             temp = n2 + n1 + carry;
             temp2 = temp % 10;

@@ -8,12 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e019f652-b79d-432e-8bf4-78e4586f54ef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/MyBigNumber_jar/MyBigNumber.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyBigNumber/IReceiver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyBigNumber/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyBigNumber/MyBigNumber.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyBigNumber/MyBigNumberMain.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyBigNumber/MyBigNumberTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyBigNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyBigNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyBigNumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyBigNumberTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,19 +23,20 @@
     <SUITE FILE_PATH="coverage/MyBigNumber$All_Features_in__src.ic" NAME="All Features in: src Coverage Results" MODIFIED="1545288007024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cucumber.api.cli.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/MyBigNumber$MyBigNumberTest.ic" NAME="MyBigNumberTest Coverage Results" MODIFIED="1545289231729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/MyBigNumber$MyBigNumberTest.ic" NAME="MyBigNumberTest Coverage Results" MODIFIED="1545406033497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="220" />
+    <option name="myElementSize" value="233" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="338186712">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -60,7 +58,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="7" />
+          <entry key="JAVA" value="415" />
         </counts>
       </usages-collector>
     </session>
@@ -76,16 +74,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MyBigNumber.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="50" column="51" selection-start-line="50" selection-start-column="51" selection-end-line="50" selection-end-column="51" />
+            <state relative-caret-position="561">
+              <caret line="74" column="59" selection-start-line="74" selection-start-column="59" selection-end-line="74" selection-end-column="59" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MyBigNumberMain.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
@@ -97,8 +95,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MyBigNumberTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1054">
-              <caret line="62" column="23" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
+            <state relative-caret-position="255">
+              <caret line="129" column="48" selection-start-line="129" selection-start-column="48" selection-end-line="129" selection-end-column="48" />
+              <folding>
+                <element signature="e#1411#1412#0" expanded="true" />
+                <element signature="e#1469#1470#0" expanded="true" />
+                <element signature="e#1550#1551#0" expanded="true" />
+                <element signature="e#1603#1604#0" expanded="true" />
+                <element signature="e#1688#1689#0" expanded="true" />
+                <element signature="e#1743#1744#0" expanded="true" />
+                <element signature="e#1829#1830#0" expanded="true" />
+                <element signature="e#1886#1887#0" expanded="true" />
+                <element signature="e#1973#1974#0" expanded="true" />
+                <element signature="e#2030#2031#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -119,6 +129,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/MyBigNumberMain.java" />
+        <option value="$PROJECT_DIR$/src/MyBigNumberTest.java" />
         <option value="$PROJECT_DIR$/src/MyBigNumber.java" />
       </list>
     </option>
@@ -172,7 +183,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545289386014" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545408946557" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -197,7 +208,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MyBigNumberTest">
+  <component name="RunManager" selected="Application.MyBigNumberMain">
     <configuration name="MyBigNumberMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MyBigNumberMain" />
       <module name="MyBigNumber" />
@@ -237,8 +248,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MyBigNumberTest" />
         <item itemvalue="Application.MyBigNumberMain" />
+        <item itemvalue="JUnit.MyBigNumberTest" />
         <item itemvalue="Cucumber java.All Features in: src" />
       </list>
     </recent_temporary>
@@ -256,31 +267,50 @@
       <workItem from="1545287781866" duration="2133000" />
       <workItem from="1545316648970" duration="279000" />
       <workItem from="1545317072028" duration="645000" />
+      <workItem from="1545404440528" duration="3395000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_Features_in__src - 2018.12.20 at 13h 40m 17s.xml">
-      <configuration name="All Features in: src" configurationId="CucumberJavaRunConfigurationType" />
-    </history-entry>
-    <history-entry file="MyBigNumberTest - 2018.12.20 at 13h 40m 42s.xml">
+    <history-entry file="MyBigNumberTest - 2018.12.21 at 22h 18m 57s.xml">
       <configuration name="MyBigNumberTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyBigNumberTest - 2018.12.20 at 13h 59m 57s.xml">
+    <history-entry file="MyBigNumberTest - 2018.12.21 at 22h 19m 59s.xml">
       <configuration name="MyBigNumberTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyBigNumberTest - 2018.12.20 at 14h 00m 41s.xml">
+    <history-entry file="MyBigNumberTest - 2018.12.21 at 22h 20m 28s.xml">
+      <configuration name="MyBigNumberTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyBigNumberTest - 2018.12.21 at 22h 21m 45s.xml">
+      <configuration name="MyBigNumberTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyBigNumberTest - 2018.12.21 at 22h 22m 41s.xml">
+      <configuration name="MyBigNumberTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyBigNumberTest - 2018.12.21 at 22h 23m 26s.xml">
+      <configuration name="MyBigNumberTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyBigNumberTest - 2018.12.21 at 22h 24m 17s.xml">
+      <configuration name="MyBigNumberTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyBigNumberTest - 2018.12.21 at 22h 25m 19s.xml">
+      <configuration name="MyBigNumberTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyBigNumberTest - 2018.12.21 at 22h 26m 38s.xml">
+      <configuration name="MyBigNumberTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyBigNumberTest - 2018.12.21 at 22h 27m 28s.xml">
       <configuration name="MyBigNumberTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3057000" />
+    <option name="totallyTimeSpent" value="6452000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25637585" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25973153" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -335,17 +365,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyBigNumber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="50" column="51" selection-start-line="50" selection-start-column="51" selection-end-line="50" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MyBigNumberTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="62" column="23" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
+        <state relative-caret-position="255">
+          <caret line="129" column="48" selection-start-line="129" selection-start-column="48" selection-end-line="129" selection-end-column="48" />
+          <folding>
+            <element signature="e#1411#1412#0" expanded="true" />
+            <element signature="e#1469#1470#0" expanded="true" />
+            <element signature="e#1550#1551#0" expanded="true" />
+            <element signature="e#1603#1604#0" expanded="true" />
+            <element signature="e#1688#1689#0" expanded="true" />
+            <element signature="e#1743#1744#0" expanded="true" />
+            <element signature="e#1829#1830#0" expanded="true" />
+            <element signature="e#1886#1887#0" expanded="true" />
+            <element signature="e#1973#1974#0" expanded="true" />
+            <element signature="e#2030#2031#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -353,6 +388,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="49" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyBigNumber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="74" column="59" selection-start-line="74" selection-start-column="59" selection-end-line="74" selection-end-column="59" />
         </state>
       </provider>
     </entry>

@@ -54,37 +54,27 @@ public class MyBigNumberTest{
 
     @org.junit.Test(expected = NumberFormatException.class)
     public void sum7(){
-        try {
-            String s = myBigNumber.sum("abs", "4");
-        } catch (NullPointerException e) {}
+        String s = myBigNumber.sum("abs", "4");
     }
 
     @org.junit.Test(expected = NumberFormatException.class)
     public void sum8(){
-        try {
-            String s = myBigNumber.sum("-3", "4");
-        } catch (NullPointerException e) {}
+        String s = myBigNumber.sum("-3", "4");
     }
 
     @org.junit.Test(expected = NumberFormatException.class)
     public void sum9(){
-        try {
-            String s = myBigNumber.sum("3", "4asd");
-        } catch (NullPointerException e) {}
+        String s = myBigNumber.sum("3", "4asd");
     }
 
     @org.junit.Test(expected = NumberFormatException.class)
     public void sum10(){
-        try {
-            String s = myBigNumber.sum("3", "-7");
-        } catch (NullPointerException e) {}
+        String s = myBigNumber.sum("3", "-7");
     }
 
     @org.junit.Test(expected = NumberFormatException.class)
     public void sum11(){
-        try {
-            String s = myBigNumber.sum("3", "-7asdg");
-        } catch (NullPointerException e) {}
+        String s = myBigNumber.sum("3", "-7asdg");
     }
 
     @org.junit.Test(expected = NumberFormatException.class)
@@ -94,4 +84,51 @@ public class MyBigNumberTest{
         String s = myBigNumber.sum("3", "-7asdg");
     }
 
+    @org.junit.Test
+    public void sum13(){
+        try {
+            String s = myBigNumber.sum("", "4");
+            assertEquals("4", s);
+        } catch (NullPointerException e) {}
+    }
+
+    @org.junit.Test
+    public void sum14(){
+        try {
+            String s = myBigNumber.sum(null, "4");
+            assertEquals("4", s);
+        } catch (NullPointerException e) {}
+    }
+
+    @org.junit.Test
+    public void sum15(){
+        try {
+            String s = myBigNumber.sum(" ", "4");
+            assertEquals("4", s);
+        } catch (NullPointerException e) {}
+    }
+
+    @org.junit.Test
+    public void sum16(){
+        try {
+            String s = myBigNumber.sum("4", " ");
+            assertEquals("4", s);
+        } catch (NullPointerException e) {}
+    }
+
+    @org.junit.Test
+    public void sum17(){
+        try {
+            String s = myBigNumber.sum("4", "");
+            assertEquals("4", s);
+        } catch (NullPointerException e) {}
+    }
+
+    @org.junit.Test
+    public void sum18(){
+        try {
+            String s = myBigNumber.sum("4", null);
+            assertEquals("4", s);
+        } catch (NullPointerException e) {}
+    }
 }
