@@ -16,9 +16,3 @@ Then you must add the Release folder's link to the enviroment path setting.
 
 Then open cmd and type in: sum 1 2 to test if it run.
 
-
-================================================================================================================
-
-If you want to run the MyBigNumberTest.java in IntelliJ you must put the java file to the src folder in order to
-
-run the file.
