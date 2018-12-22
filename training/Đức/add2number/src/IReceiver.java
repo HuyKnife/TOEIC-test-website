@@ -1,8 +1,8 @@
-/*
-* Interface IReceiver to send sum step
-* */
+/**
+ * Interface IReceiver to send sum step.
+ */
 public interface IReceiver {
 
-    void sendMessage(String mString);
+    void sendMessage(String mstring);
 
 }
