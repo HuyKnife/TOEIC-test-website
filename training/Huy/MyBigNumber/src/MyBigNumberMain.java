@@ -1,6 +1,9 @@
 import java.util.Scanner;
 
-public class MyBigNumberMain implements IReceiver{
+/**
+ * Hàm main.
+ */
+public class MyBigNumberMain implements IReceiver {
 
 
     /*
@@ -9,28 +12,21 @@ public class MyBigNumberMain implements IReceiver{
      * */
     public static void main(String[] args) {
 
-        boolean success = false;
 
         Scanner sc = new Scanner(System.in);
         MyBigNumberMain main = new MyBigNumberMain();
         MyBigNumber s = new MyBigNumber(main);
 
-        System.out.println("Welcome to Sum two number program !!!\n");
-        while (!success) {
-            try {
-                String input = sc.nextLine();
+        try {
 
-                String[]split = input.split(" ");
+            String result = s.sum(args[0], args[1]);
+            System.out.println("Result: " + result + "\n");
 
-                String result = s.sum(split[1], split[2]);
-                System.out.println("Result: " + result + "\n");
-
-                success = true;
-            } catch (NumberFormatException e) {
-                System.out.println("\n" + e.getMessage() + "\n");
-            }
+        } catch (ExNumberFormatException e) {
+            System.out.println("\n" + e.getMessage() + "\n");
+        } catch (NumberFormatException e) {
+            System.out.println("\n" + e.getMessage() + "\n");
         }
-
         sc.close();
 
     }
