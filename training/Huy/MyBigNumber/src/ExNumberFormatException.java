@@ -1,15 +1,14 @@
 public class ExNumberFormatException extends NumberFormatException {
 
     private int errorPost;
-    private String mess = "";
 
     public ExNumberFormatException(int pos) {
+        super("Vi tri thu: ");
         this.errorPost = pos;
-        mess = "Vi tri thu: " + (errorPost + "");
     }
 
     @Override
     public String getMessage() {
-        return mess;
+        return "Vi tri thu: " + (errorPost + "");
     }
 }
