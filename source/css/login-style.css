@@ -3,6 +3,10 @@ body{
   padding-top:4.2rem;
   padding-bottom:4.2rem;
 }
+#title {
+  color: white;
+  text-align: center;
+}
 a{
   text-decoration:none !important;
 }

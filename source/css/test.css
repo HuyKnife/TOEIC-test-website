@@ -1,0 +1,39 @@
+#title h1, #start-btn {
+    text-align: center;
+}
+
+div.intro {
+    position: -webkit-sticky;
+    position: sticky;
+    border-style: dotted;
+    height: 800px;
+}
+
+#title-intro, #title-sol {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#title-sol  span {
+    color: orangered;
+    font-weight: lighter;
+}
+.para-warning {
+    font-size: 20px;
+}
+.warning {
+    text-align: center;
+    color: orangered;
+}
+#start-test {
+    text-align: center;
+}
+
+#play-btn {
+    text-align: center;
+    margin-top: 30px;
+}
+#listen-warning {
+    text-align: center;
+    color: orangered;
+}
