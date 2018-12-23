@@ -31,7 +31,7 @@
     <!-- Top navigation -->
     <nav class="navbar navbar-expand-md fixed-top top-nav">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="img/toeicLogo.png" alt=""></a>
+            <a class="navbar-brand" href="#"><img src="img/toeicLogo2.png" alt=""></a>
             <div id="top-right"><a href="login.php"><i class="fas fa-user"></i> Login</a></div>
         </div>
     </nav>
