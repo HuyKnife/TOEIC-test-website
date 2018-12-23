@@ -30,6 +30,14 @@
                 $("#section1").fadeOut("slow");
                 $("#section2").fadeIn(5000);
             });
+            $("#go-test").click(function(){
+                $("#section2").fadeOut();
+                $("#section3").fadeIn(5000);
+            });
+            $("#startAudioClick").click(function(){
+                $("#label-warning").fadeOut();
+            });
+                
         });
     </script>
 </head>
@@ -40,12 +48,12 @@
         <a class="breadcrumb-item" href="test.php">TEST</a>
     </nav>
     <div id="start-page">
-        
+
         <div id="title">
             <h1>When You Ready!! Start Start Button</h1>
         </div>
         <div id="start-btn">
-            <button type="button" id ="btn-start" class="btn btn-danger">Start</button>
+            <button type="button" id="btn-start" class="btn btn-danger">Start</button>
         </div>
     </div>
     <div class="container intro" style="display: none;">
@@ -53,19 +61,20 @@
             <h4 id="title-intro">The test based on real exam questions</h4>
             <h1 id="title-sol"><span>PRACTICE FOR</span> THE TOEIC</h1>
             <p class="para-warning">Based on the TOEIC exam structure,
-                    this test has a total of 7 sections, 
-                    including 4 parts Listening and 3 Reading sections. 
-                    This is a sample lesson to help you prepare for the TOEIC exam, 
-                    with the number of questions being cut to one fifth compared to the actual TOEIC lesson.
+                this test has a total of 7 sections,
+                including 4 parts Listening and 3 Reading sections.
+                This is a sample lesson to help you prepare for the TOEIC exam,
+                with the number of questions being cut to one fifth compared to the actual TOEIC lesson.
             </p>
             <p class="para-warning">
-                The results of this test are assessed on the basis of TOEIC scoring method. 
+                The results of this test are assessed on the basis of TOEIC scoring method.
                 The score you receive will not guarantee your actual TOEIC test score,
-                    but will more or less reflect your ability to achieve a similar score.
+                but will more or less reflect your ability to achieve a similar score.
             </p>
             <br><br>
             <h3 class="warning">WHERE ARE YOU READY TO THE TOEIC TEST? CHECK NOW!</h3>
-            <h4 class="warning">Note: For honest results, you should try to complete the test within 30 minutes.</h4>
+            <h4 class="warning">Note: For honest results, you should try to complete the test within 45 minutes
+                in Listening Part.</h4>
             <br><br>
             <div id="start-test">
                 <button type="button" class="btn btn-info btn-lg">Start The Test</button>
@@ -86,10 +95,6 @@
                         function playAudio() { 
                             x.play(); 
                         } 
-                        
-                        function pauseAudio() { 
-                            x.pause(); 
-                        } 
                     </script>
                 </div>
                 <br><br>
@@ -105,7 +110,76 @@
                 </div>
             </div>
         </div>
-        
+
+        <div id="section3" style="display:;">
+            <div id="main-part">
+                <div id="audio-part">
+                    <div id="play-btn">
+                        <button type="button" onclick="startAudio()" id="startAudioClick" class="btn btn-info btn-lg"><i
+                                class="fas fa-play-circle"></i></button>
+                        <audio id="audioReady">
+                            <source src="audio/Audio TOEIC.mp3" type="audio/ogg">
+                        </audio>
+                        <div id="label-warning">
+                            <h1>When You Click The Play Button The Clock Will Count And You Can Not Pause The Audio</h1>
+                        </div>
+                        <script>
+                            var x = document.getElementById("audioReady"); 
+                            
+                            function startAudio() { 
+                                x.play(); 
+                            } 
+                        </script>
+                    </div>
+                </div>
+
+                <div id="Direction">
+                    <p>
+                        <span style="font-weight: bold;">DIRECTION: </span> For each question in this part, you will
+                        hear four statements about a picture in
+                        your test book. When you hear the statements, you must select the one statement that best
+                        describes what you see in the picture. Then find the number of the question on your answer
+                        sheet and mark your answer. The statements will not be printed in your test book and will be
+                        spoken only one time.
+                    </p>
+                </div>
+
+                <div id="questionImage">
+                    <div id="imagePart">
+                        <img src="img/imgQuestion/1.PNG" alt="" class="img-thumbnail">
+                    </div>
+                </div>
+                <div id="questionPart">
+                    <div id="answer">
+                        <button type="button" class="btn btn-brand btn-twitter">A <br>
+                            <button type="button" class="btn btn-brand btn-twitter">B <br>
+                                <button type="button" class="btn btn-brand btn-twitter">C <br>
+                                    <button type="button" class="btn btn-brand btn-twitter">D <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="nextQuesion">
+            <div id="next">
+                <button type="button" class="btn btn-square btn-success">Next Page</button>
+            </div>
+        </div>
+
+        <div id="clockdiv">
+            <div>
+                <span class="hours"></span>
+                <div class="smalltext">Hours</div>
+            </div>
+            <div>
+                <span class="minutes"></span>
+                <div class="smalltext">Minutes</div>
+            </div>
+            <div>
+                <span class="seconds"></span>
+                <div class="smalltext">Seconds</div>
+            </div>
+        </div>
     </div>
 </body>
 
