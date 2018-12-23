@@ -58,6 +58,7 @@ div.intro {
 #next {
     float: right;
     width: 100px;
+    margin-top: 250px;
 }
 
 /*Clock*/

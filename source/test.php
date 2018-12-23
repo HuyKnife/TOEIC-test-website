@@ -21,21 +21,28 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
+        var x = document.getElementById("myAudio"); 
         $(document).ready(function(){
             $("#btn-start").click(function(){
                 $("#start-page").fadeOut("slow");
-                $(".intro").fadeIn(5000);
+                $("#next").hide();
+                $(".intro").fadeIn(4000);
             });
             $("#start-test").click(function(){
                 $("#section1").fadeOut("slow");
-                $("#section2").fadeIn(5000);
+                $("#section2").fadeIn(4000);
+                $("#next").hide();
             });
             $("#go-test").click(function(){
+                x.pause(); 
+                $("#next").hide();
                 $("#section2").fadeOut();
-                $("#section3").fadeIn(5000);
+                $("#section3").fadeIn(4000);
             });
             $("#startAudioClick").click(function(){
+                $("#next").hide();
                 $("#label-warning").fadeOut();
+                $("#main-part").fadeIn();
             });
                 
         });
@@ -84,7 +91,7 @@
         <div id="section2" style="display: none;">
             <div id="testing-listen">
                 <div id="play-btn">
-                    <button type="button" onclick="playAudio()" class="btn btn-info btn-lg"><i class="fas fa-play-circle"></i></button>
+                    <button type="button" onclick="playAudio()" id="audioTest"class="btn btn-info btn-lg"><i class="fas fa-play-circle"></i></button>
                     <audio id="myAudio">
                         <source src="audio/testAudio.mp3" type="audio/ogg">
                     </audio>
@@ -111,7 +118,7 @@
             </div>
         </div>
 
-        <div id="section3" style="display:;">
+        <div id="section3" style="display: none;">
             <div id="main-part">
                 <div id="audio-part">
                     <div id="play-btn">
@@ -124,10 +131,10 @@
                             <h1>When You Click The Play Button The Clock Will Count And You Can Not Pause The Audio</h1>
                         </div>
                         <script>
-                            var x = document.getElementById("audioReady"); 
+                            var y = document.getElementById("audioReady"); 
                             
                             function startAudio() { 
-                                x.play(); 
+                                y.play(); 
                             } 
                         </script>
                     </div>
@@ -150,6 +157,9 @@
                     </div>
                 </div>
                 <div id="questionPart">
+                    <div id="question">
+                        <!-- Nếu hết 10 câu hình thì phần imagePart mất để lại phần Question là chính -->
+                    </div>
                     <div id="answer">
                         <button type="button" class="btn btn-brand btn-twitter">A <br>
                             <button type="button" class="btn btn-brand btn-twitter">B <br>
@@ -163,21 +173,6 @@
         <div id="nextQuesion">
             <div id="next">
                 <button type="button" class="btn btn-square btn-success">Next Page</button>
-            </div>
-        </div>
-
-        <div id="clockdiv">
-            <div>
-                <span class="hours"></span>
-                <div class="smalltext">Hours</div>
-            </div>
-            <div>
-                <span class="minutes"></span>
-                <div class="smalltext">Minutes</div>
-            </div>
-            <div>
-                <span class="seconds"></span>
-                <div class="smalltext">Seconds</div>
             </div>
         </div>
     </div>
