@@ -142,12 +142,10 @@ public class MyBigNumberTest{
 
     @org.junit.Test
     public void sum20(){
-        try {
-            MyBigNumberMain test = new MyBigNumberMain();
-            MyBigNumber myBigNumber = new MyBigNumber(test);
-            String s = myBigNumber.sum("3", "4a");
-        } catch (ExNumberFormatException ex) {
-            assertEquals("Vi tri thu: 2", ex.getMessage());
-        }
+        expectedEx.expect(ExNumberFormatException.class);
+        expectedEx.expectMessage("Vi tri thu: 2");
+        MyBigNumberMain test = new MyBigNumberMain();
+        MyBigNumber myBigNumber = new MyBigNumber(test);
+        String s = myBigNumber.sum("3", "4a");
     }
 }

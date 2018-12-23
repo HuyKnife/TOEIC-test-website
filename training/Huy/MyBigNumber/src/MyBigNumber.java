@@ -21,11 +21,11 @@ public class MyBigNumber {
         String str1 = s1;                       // chuỗi chứa giá trị của s1
         String str2 = s2;                       // chuỗi chứa giá trị của s2
 
-        if (s1 == null || s1.trim().isEmpty()) {
+        if ((s1 == null) || (s1.trim().isEmpty())) {
             str1 = "0";
         }
 
-        if (s2 == null || s2.trim().isEmpty()) {
+        if ((s2 == null) || (s2.trim().isEmpty())) {
             str2 = "0";
         }
 
@@ -59,24 +59,21 @@ public class MyBigNumber {
 
         for (i = 0; i < length; i++) {
 
-            checkS1 = i < len1 ? str1.charAt(i) : '0';
-            checkS2 = i < len2 ? str2.charAt(i) : '0';
+            checkS1 = (i < len1) ? str1.charAt(i) : '0';
+            checkS2 = (i < len2) ? str2.charAt(i) : '0';
 
             if (!(checkS1 >= '0' && checkS1 <= '9')) {
-                throw new NumberFormatException("Vi tri thu "
-                        + (s1.indexOf(checkS1) + 1)
-                        + " cua so thu 1 khong phai la so: "
-                        + checkS1);
+                this.receiver.sendMessage("\nVui long khong chua ki tu dac biet hoac chu trong s1 : " + s1);
+                throw new ExNumberFormatException((s1.indexOf(checkS1) + 1));
             }
 
             if (!(checkS2 >= '0' && checkS2 <= '9')) {
-                throw new NumberFormatException("Vi tri thu "
-                        + (s2.indexOf(checkS1) + 1)
-                        + " cua so thu 2 khong phai la so: " + checkS2);
+                this.receiver.sendMessage("\nVui long khong chua ki tu dac biet hoac chu trong s2 : " + s2);
+                throw new ExNumberFormatException((s2.indexOf(checkS2) + 1));
             }
 
-            n1 = i < len1 ? (str1.charAt(len1 - i - 1) - '0') : 0;
-            n2 = i < len2 ? (str2.charAt(len2 - i - 1) - '0') : 0;
+            n1 = (i < len1) ? (str1.charAt(len1 - i - 1) - '0') : 0;
+            n2 = (i < len2) ? (str2.charAt(len2 - i - 1) - '0') : 0;
 
             temp = n2 + n1 + carry;
             temp2 = temp % 10;
