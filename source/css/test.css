@@ -70,3 +70,20 @@ div.intro {
 	text-align: center;
 	font-size: 30px;
 }
+
+#result {
+    text-align: center;
+    font-size: 50px;
+    margin-top: 100px;
+}
+
+#result h1, #totalRes {
+    font-size: 70px;
+    color: orangered;
+}
+
+#returnHome {
+    float: right;
+    font-size: 40px;
+    margin-top: 25%;
+}

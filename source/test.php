@@ -35,8 +35,8 @@
             });
             $("#go-test").click(function(){
                 x.pause(); 
-                $("#next").hide();
-                $("#section2").fadeOut();
+                $("#next").fadeIn(4000);
+                $("#section2").hide();
                 $("#section3").fadeIn(4000);
             });
             $("#startAudioClick").click(function(){
@@ -44,7 +44,11 @@
                 $("#label-warning").fadeOut();
                 $("#main-part").fadeIn();
             });
-                
+            $("#next").click(function(){
+                $("#next").hide();
+                $("#main-part").fadeOut();
+                $("#result").fadeIn(4000);
+            });
         });
     </script>
 </head>
@@ -173,6 +177,16 @@
         <div id="nextQuesion">
             <div id="next">
                 <button type="button" class="btn btn-square btn-success">Next Page</button>
+            </div>
+        </div>
+
+        <div id="result"style="display: none;">
+            <div id="resultLabel">
+                <h1>Your score:</h1>
+                <div id="listenRes"><span>Listening:</span>30</div>
+                <div id="readRes"><span>Reading:</span>20</div>
+                <div id="totalRes"><span>Total:</span>50</div>
+                <a href="index.php" id="returnHome"><i class="fas fa-home"></i>Return to homepage</a>
             </div>
         </div>
     </div>
