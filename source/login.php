@@ -1,3 +1,4 @@
+<?php include('loginserver.php'); ?>
 <!DOCTYPE html>
 <html>
 
@@ -38,7 +39,7 @@
                 <h1>Login</h1>
               </div>
             </div>
-            <form action="" method="post" name="login">
+            <form action="login.php" method="post" name="login">
               <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
                 <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp"
@@ -50,7 +51,7 @@
                   placeholder="Enter Password">
               </div>
               <div class="col-md-12 text-center ">
-                <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>
+                <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm" name="login_user">Login</button>
               </div>
               <div class="col-md-12 ">
                 <div class="login-or">
@@ -72,7 +73,7 @@
                 <h1>Signup</h1>
               </div>
             </div>
-            <form action="#" name="registration">
+            <form method="post" action="login.php" name="registration">
               <div class="form-group">
                 <label for="exampleInputEmail1">First Name</label>
                 <input type="text" name="firstname" class="form-control" id="firstname" aria-describedby="emailHelp"
@@ -94,7 +95,7 @@
                   placeholder="Enter Password">
               </div>
               <div class="col-md-12 text-center mb-3">
-                <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Get Started For Free</button>
+                <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm" name="reg_user">Get Started For Free</button>
               </div>
               <div class="col-md-12 ">
                 <div class="form-group">
