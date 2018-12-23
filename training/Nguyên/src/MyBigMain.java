@@ -2,21 +2,31 @@ import java.util.Scanner;
 
 public class MyBigMain implements IObserver {
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         MyBigMain myBigMain = new MyBigMain();
         MyBigNumber num = new MyBigNumber(myBigMain);
+        String str1 = "";
+        String str2 = "";
 
-        System.out.print("Nhap chuoi so dau tien: ");
-        String str1 = scanner.next();
+        try {
+            if (args.length > 0) {
+                str1 = args[0];
+                str2 = args[1];
+            } else {
+                str1 = "0";
+                str2 = "0";
+            }
+            System.out.println("Ta duoc so: " + num.sum(str1, str2) + "\n");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
-        System.out.print("Nhap chuoi so thu hai: ");
-        String str2 = scanner.next();
-
-        System.out.println("Ta duoc so: " + num.sum(str1, str2));
+        scanner.close();
     }
 
     public void sendStep(String str) {
         System.out.println(str);
     }
+
 }
