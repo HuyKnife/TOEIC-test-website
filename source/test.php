@@ -34,17 +34,23 @@
                 $("#next").hide();
             });
             $("#go-test").click(function(){
-                x.pause(); 
-                $("#next").fadeIn(4000);
+                x.pause();
+                $("#next").hide();
                 $("#section2").hide();
                 $("#section3").fadeIn(4000);
+                $("#questionDetail").hide();
+                $("#Direction").hide();
+                $("#clock").show();
             });
             $("#startAudioClick").click(function(){
-                $("#next").hide();
                 $("#label-warning").fadeOut();
-                $("#main-part").fadeIn();
+                $("#main-part").fadeIn(4000);
+                $("#questionDetail").fadeIn(4000);
+                $("#next").fadeIn(4000);
+                $("#Direction").fadeIn(4000);
             });
             $("#next").click(function(){
+                y.pause();
                 $("#next").hide();
                 $("#main-part").fadeOut();
                 $("#result").fadeIn(4000);
@@ -58,6 +64,7 @@
         <a class="breadcrumb-item" href="index.php">Home</a>
         <a class="breadcrumb-item" href="test.php">TEST</a>
     </nav>
+    
     <div id="start-page">
 
         <div id="title">
@@ -128,21 +135,26 @@
                     <div id="play-btn">
                         <button type="button" onclick="startAudio()" id="startAudioClick" class="btn btn-info btn-lg"><i
                                 class="fas fa-play-circle"></i></button>
+                        <!-- timer -->
+                        <div id="clock" style="display: none; font-size: 20px;"> 
+                            <div id="clockPart">
+                                <span>Timer</span> 
+                                <span id="time">15:00</span> 
+                                <span>minutes!</span>
+                            </div>
+                        </div>
                         <audio id="audioReady">
                             <source src="audio/Audio TOEIC.mp3" type="audio/ogg">
                         </audio>
                         <div id="label-warning">
                             <h1>When You Click The Play Button The Clock Will Count And You Can Not Pause The Audio</h1>
                         </div>
-                        <!-- timer -->
-                        <div>Timer <span id="time">5:00</span> minutes!</div>
-                        <!-- timer -->
                         <script>
                             var y = document.getElementById("audioReady"); 
                             
                             function startAudio() { 
                                 y.play(); 
-                                var fiveMinutes = 60 * 5,
+                                var fiveMinutes = 60 * 15,
                                 display = document.querySelector('#time');
                                 startTimer(fiveMinutes, display);
                             } 
@@ -177,21 +189,22 @@
                         spoken only one time.
                     </p>
                 </div>
-
-                <div id="questionImage">
-                    <div id="imagePart">
-                        <img src="img/imgQuestion/1.PNG" alt="" class="img-thumbnail">
+                <div id="questionDetail" style="display: none;">
+                    <div id="questionImage">
+                        <div id="imagePart">
+                            <img src="img/imgQuestion/1.PNG" alt="" class="img-thumbnail">
+                        </div>
                     </div>
-                </div>
-                <div id="questionPart">
-                    <div id="question">
-                        <!-- Nếu hết 10 câu hình thì phần imagePart mất để lại phần Question là chính -->
-                    </div>
-                    <div id="answer">
-                        <button type="button" class="btn btn-brand btn-twitter">A <br>
-                            <button type="button" class="btn btn-brand btn-twitter">B <br>
-                                <button type="button" class="btn btn-brand btn-twitter">C <br>
-                                    <button type="button" class="btn btn-brand btn-twitter">D <br>
+                    <div id="questionPart">
+                        <div id="question">
+                            <!-- Nếu hết 10 câu hình thì phần imagePart mất để lại phần Question là chính -->
+                        </div>
+                        <div id="answer">
+                            <button type="button" class="btn btn-brand btn-twitter">A <br>
+                                <button type="button" class="btn btn-brand btn-twitter">B <br>
+                                    <button type="button" class="btn btn-brand btn-twitter">C <br>
+                                        <button type="button" class="btn btn-brand btn-twitter">D <br>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -213,6 +226,7 @@
             </div>
         </div>
     </div>
+    
 </body>
 
 </html>
