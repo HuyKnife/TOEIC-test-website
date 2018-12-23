@@ -61,7 +61,7 @@
     <div id="start-page">
 
         <div id="title">
-            <h1>When You Ready!! Start Start Button</h1>
+            <h1>When You Ready!! Press Start Button</h1>
         </div>
         <div id="start-btn">
             <button type="button" id="btn-start" class="btn btn-danger">Start</button>
@@ -111,7 +111,7 @@
                 <br><br>
                 <div id="listen-warning">
                     <h1>BEFORE GO TO THE TEST, PLEASE CHECK YOUR HEADPHONE FIRST BY CLICK TO THE AUDIO BUTTON</h1>
-                    <p>In this section of the test, you will have the chance to showw how well
+                    <p>In this section of the test, you will have the chance to show how well
                         you understand spoken English.
                     </p>
                     <br><br><br>
@@ -134,12 +134,35 @@
                         <div id="label-warning">
                             <h1>When You Click The Play Button The Clock Will Count And You Can Not Pause The Audio</h1>
                         </div>
+                        <!-- timer -->
+                        <div>Timer <span id="time">5:00</span> minutes!</div>
+                        <!-- timer -->
                         <script>
                             var y = document.getElementById("audioReady"); 
                             
                             function startAudio() { 
                                 y.play(); 
+                                var fiveMinutes = 60 * 5,
+                                display = document.querySelector('#time');
+                                startTimer(fiveMinutes, display);
                             } 
+
+                            function startTimer(duration, display) {
+                                var timer = duration, minutes, seconds;
+                                setInterval(function () {
+                                    minutes = parseInt(timer / 60, 10)
+                                    seconds = parseInt(timer % 60, 10);
+
+                                    minutes = minutes < 10 ? "0" + minutes : minutes;
+                                    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                                    display.textContent = minutes + ":" + seconds;
+
+                                    if (--timer < 0) {
+                                        timer = duration;
+                                    }
+                                }, 1000);
+                            }
                         </script>
                     </div>
                 </div>
