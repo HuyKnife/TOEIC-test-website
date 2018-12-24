@@ -1,3 +1,14 @@
+<?php
+    require_once("config/config.php");
+    session_start();
+
+    if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header("location: index.php");
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -32,7 +43,16 @@
     <nav class="navbar navbar-expand-md fixed-top top-nav">
         <div class="container">
             <a class="navbar-brand" href="#"><img src="img/toeicLogo2.png" alt=""></a>
-            <div id="top-right"><a href="login.php"><i class="fas fa-user"></i> Login</a></div>
+            <?php
+            if (!isset($_SESSION['email'])) {
+                echo "<div id=\"top-right\"><a href=\"login.php\"><i class=\"fas fa-user\"></i> Login</a></div>";
+            }
+             if (isset($_SESSION['email'])) {
+                echo "<div id=\"top-right\"><a href=''><i class=\"fas fa-user\"></i> Welcome " . $_SESSION['email'] . "</a><br>"
+                . "<a href='index.php?logout='1'>Log out</a>"
+                . "</div>";
+            }
+        ?>
         </div>
     </nav>
 
@@ -46,16 +66,16 @@
             <div class="carousel-item active">
                 <img class="d-block img-fluid" alt="First slide" src="img/page1.png">
                 <div class="carousel-caption ">
-                    <h2 class="display-4 text-white mb-2 mt-4">Wanna have good score in TOEIC???</h2>
+                    <h2 class="display-4 text-white mb-4 mt-4">Wanna have good score in TOEIC???</h2>
                     <a href="#" class="btn btn-primary btn-capsul px-4 py-2">Join Us Now!!!</a>
                 </div>
             </div>
             <div class="carousel-item">
                 <img class="d-block img-fluid" alt="First slide" src="img/page2.jpg">
                 <div class="carousel-caption ">
-                    <h2 class="display-4 text-white mb-2 mt-4">Accept the challenges ??? Do the test now.</h2>
+                    <h2 class="display-4 text-white mb-4 mt-4">Accept the challenges ??? Do the test now.</h2>
                     
-                    <a href="test.html" class="btn btn-primary btn-capsul px-4 py-2">Click here to do the TOEIC TEST</a>
+                    <a href="test.php" class="btn btn-primary btn-capsul px-4 py-2">Click here to do the TOEIC TEST</a>
                 </div>
             </div>
         </div>

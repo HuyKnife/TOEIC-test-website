@@ -1,3 +1,8 @@
+<?php
+    require_once("config/config.php");
+?>
+
+
 <?php include('loginserver.php'); ?>
 <!DOCTYPE html>
 <html>

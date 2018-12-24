@@ -1,3 +1,13 @@
+<?php
+    require_once("config/config.php");
+    session_start();
+
+    if (!isset($_SESSION['email'])) {
+    $_SESSION['msg'] = "You must log in first";
+    header('location: login.php');
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -34,17 +44,23 @@
                 $("#next").hide();
             });
             $("#go-test").click(function(){
-                x.pause(); 
-                $("#next").fadeIn(4000);
+                x.pause();
+                $("#next").hide();
                 $("#section2").hide();
                 $("#section3").fadeIn(4000);
+                $("#questionDetail").hide();
+                $("#Direction").hide();
+                $("#clock").show();
             });
             $("#startAudioClick").click(function(){
-                $("#next").hide();
                 $("#label-warning").fadeOut();
-                $("#main-part").fadeIn();
+                $("#main-part").fadeIn(4000);
+                $("#questionDetail").fadeIn(4000);
+                $("#next").fadeIn(4000);
+                $("#Direction").fadeIn(4000);
             });
             $("#next").click(function(){
+                y.pause();
                 $("#next").hide();
                 $("#main-part").fadeOut();
                 $("#result").fadeIn(4000);
@@ -58,10 +74,11 @@
         <a class="breadcrumb-item" href="index.php">Home</a>
         <a class="breadcrumb-item" href="test.php">TEST</a>
     </nav>
+    
     <div id="start-page">
 
         <div id="title">
-            <h1>When You Ready!! Start Start Button</h1>
+            <h1>When You Ready!! Press Start Button</h1>
         </div>
         <div id="start-btn">
             <button type="button" id="btn-start" class="btn btn-danger">Start</button>
@@ -111,7 +128,7 @@
                 <br><br>
                 <div id="listen-warning">
                     <h1>BEFORE GO TO THE TEST, PLEASE CHECK YOUR HEADPHONE FIRST BY CLICK TO THE AUDIO BUTTON</h1>
-                    <p>In this section of the test, you will have the chance to showw how well
+                    <p>In this section of the test, you will have the chance to show how well
                         you understand spoken English.
                     </p>
                     <br><br><br>
@@ -128,6 +145,14 @@
                     <div id="play-btn">
                         <button type="button" onclick="startAudio()" id="startAudioClick" class="btn btn-info btn-lg"><i
                                 class="fas fa-play-circle"></i></button>
+                        <!-- timer -->
+                        <div id="clock" style="display: none; font-size: 20px;"> 
+                            <div id="clockPart">
+                                <span>Timer</span> 
+                                <span id="time">45:00</span> 
+                                <span>minutes!</span>
+                            </div>
+                        </div>
                         <audio id="audioReady">
                             <source src="audio/Audio TOEIC.mp3" type="audio/ogg">
                         </audio>
@@ -139,7 +164,27 @@
                             
                             function startAudio() { 
                                 y.play(); 
+                                var fiveMinutes = 60 * 45,
+                                display = document.querySelector('#time');
+                                startTimer(fiveMinutes, display);
                             } 
+
+                            function startTimer(duration, display) {
+                                var timer = duration, minutes, seconds;
+                                setInterval(function () {
+                                    minutes = parseInt(timer / 60, 10)
+                                    seconds = parseInt(timer % 60, 10);
+
+                                    minutes = minutes < 10 ? "0" + minutes : minutes;
+                                    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                                    display.textContent = minutes + ":" + seconds;
+
+                                    if (--timer < 0) {
+                                        timer = duration;
+                                    }
+                                }, 1000);
+                            }
                         </script>
                     </div>
                 </div>
@@ -154,23 +199,37 @@
                         spoken only one time.
                     </p>
                 </div>
+                <?php 
+                    
+                    
+                ?>
+                <div id="questionDetail" style="display: none;">
+                    <?php
+                    for($i = 1; $i < 51; $i++){
+                        $query = "SELECT * FROM listening WHERE id = $i";
+                        $result = mysqli_query($conn, $query); 
+                    while($row = mysqli_fetch_array($result)) {?>
+                    <div id="questionImage">
+                        <div id="imagePart">
+                            <img src="<?php echo $row['img']; ?>" alt="" class="img-thumbnail">';
+                        </div>
+                    </div>
+                    <div id="questionPart">
+                        <div id="question">
+                            <!-- Nếu hết 10 câu hình thì phần imagePart mất để lại phần Question là chính -->
+                            <div><?php echo $row['ques']?></div>
+                        </div>
+                        <div id="answer">
+                            <button type="button" class="btn btn-brand btn-twitter">A <br>
+                                <button type="button" class="btn btn-brand btn-twitter">B <br>
+                                    <button type="button" class="btn btn-brand btn-twitter">C <br>
+                                        <button type="button" class="btn btn-brand btn-twitter">D <br>
+                        </div>
+                    </div>
+                    <?php }
+                    } ?>
+                </div> 
 
-                <div id="questionImage">
-                    <div id="imagePart">
-                        <img src="img/imgQuestion/1.PNG" alt="" class="img-thumbnail">
-                    </div>
-                </div>
-                <div id="questionPart">
-                    <div id="question">
-                        <!-- Nếu hết 10 câu hình thì phần imagePart mất để lại phần Question là chính -->
-                    </div>
-                    <div id="answer">
-                        <button type="button" class="btn btn-brand btn-twitter">A <br>
-                            <button type="button" class="btn btn-brand btn-twitter">B <br>
-                                <button type="button" class="btn btn-brand btn-twitter">C <br>
-                                    <button type="button" class="btn btn-brand btn-twitter">D <br>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -190,6 +249,7 @@
             </div>
         </div>
     </div>
+    
 </body>
 
 </html>
