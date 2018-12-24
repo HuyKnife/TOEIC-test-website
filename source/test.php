@@ -53,16 +53,23 @@ if (!isset($_SESSION['email'])) {
             $("#startAudioClick").click(function () {
                 $("#label-warning").fadeOut();
                 $("#main-part").fadeIn(4000);
-                $("#questionDetail").fadeIn(4000);
+                $("#questionDetail-1").fadeIn(4000);
                 $("#next").fadeIn(4000);
                 $("#Direction").fadeIn(4000);
             });
             $("#next").click(function () {
-                y.pause();
-                $("#next").hide();
-                $("#main-part").fadeOut();
-                $("#result").fadeIn(4000);
+                $("#questionDetail-1").hide();
+                $("#questionDetail-2").fadeIn(4000);
             });
+
+            /* Return to result 
+                $("#next").click(function () {
+                    y.pause();
+                    $("#next").hide();
+                    $("#main-part").fadeOut();
+                    $("#result").fadeIn(4000);
+                });
+            */
         });
     </script>
 </head>
@@ -198,7 +205,9 @@ if (!isset($_SESSION['email'])) {
                     spoken only one time.
                 </p>
             </div>
-            <div id="questionDetail" style="display: none;">
+
+            <!-- Câu 1 --> 
+            <div id="questionDetail-1" style="display: none;">
                 <div id="questionImage">
                     <div id="imagePart">
                         <img src="img/imgQuestion/1.PNG" alt="" class="img-thumbnail">
@@ -216,6 +225,62 @@ if (!isset($_SESSION['email'])) {
                     </div>
                 </div>
             </div>
+            <!-- End Câu 1-->
+
+            <!-- Câu 2 --
+            <div id="questionDetail-2" style="display: none;">
+                <div id="questionImage">
+                    <div id="imagePart">
+                        <img src="img/imgQuestion/2.PNG" alt="" class="img-thumbnail">
+                    </div>
+                </div>
+                <div id="questionPart">
+                    <div id="question">
+                        <!-- Nếu hết 10 câu hình thì phần imagePart mất để lại phần Question là chính --
+                    </div>
+                    <div id="answer">
+                        <button type="button" class="btn btn-brand btn-twitter">A <br>
+                            <button type="button" class="btn btn-brand btn-twitter">B <br>
+                                <button type="button" class="btn btn-brand btn-twitter">C <br>
+                                    <button type="button" class="btn btn-brand btn-twitter">D <br>
+                    </div>
+                </div>
+            </div>
+            !-- End Câu 2-->
+
+            <!-- Câu 3 -->
+            <div id="questionDetail-2" style="display: none;">
+                <div id="questionImage">
+                    <div id="imagePart">
+                        <!-- <img src="img/imgQuestion/2.PNG" alt="" class="img-thumbnail"> -->
+                    </div>
+                </div>
+                <div id="questionPart">
+                    <div id="question">
+                        <!-- Nếu hết 10 câu hình thì phần imagePart mất để lại phần Question là chính -->
+                        <h3>Question:</h3>
+                        <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Nam eu arcu non purus consectetur mollis quis vel diam. 
+                        Cras nec tincidunt mi, in elementum augue. Curabitur eget ligula varius, 
+                        mattis eros posuere, rutrum libero.
+                        </p>
+                        <p>
+                        <span id="answer-1">A) bla </span> <br>
+                        <span id="answer-2">B) bla bla</span> <br>
+                        <span id="answer-3">C) bla bla bla</span> <br>
+                        <span id="answer-4">D) bla bla bla bla</span> <br>
+                        </p>
+                    </div>
+                    <div id="answer">
+                        <button type="button" class="btn btn-brand btn-twitter">A <br>
+                            <button type="button" class="btn btn-brand btn-twitter">B <br>
+                                <button type="button" class="btn btn-brand btn-twitter">C <br>
+                                    <button type="button" class="btn btn-brand btn-twitter">D <br>
+                    </div>
+                </div>
+            </div>
+            <!-- End Câu 3-->
         </div>
     </div>
 
