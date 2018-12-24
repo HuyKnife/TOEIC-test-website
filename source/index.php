@@ -1,5 +1,12 @@
 <?php
     require_once("config/config.php");
+    session_start();
+
+    if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header("location: index.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +43,16 @@
     <nav class="navbar navbar-expand-md fixed-top top-nav">
         <div class="container">
             <a class="navbar-brand" href="#"><img src="img/toeicLogo2.png" alt=""></a>
-            <div id="top-right"><a href="login.php"><i class="fas fa-user"></i> Login</a></div>
+            <?php
+            if (!isset($_SESSION['email'])) {
+                echo "<div id=\"top-right\"><a href=\"login.php\"><i class=\"fas fa-user\"></i> Login</a></div>";
+            }
+             if (isset($_SESSION['email'])) {
+                echo "<div id=\"top-right\"><a href=''><i class=\"fas fa-user\"></i> Welcome " . $_SESSION['email'] . "</a><br>"
+                . "<a href='index.php?logout='1'>Log out</a>"
+                . "</div>";
+            }
+        ?>
         </div>
     </nav>
 

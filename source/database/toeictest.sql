@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 24, 2018 at 11:19 AM
+-- Generation Time: Dec 24, 2018 at 02:55 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -246,6 +246,26 @@ INSERT INTO `listening` (`id`, `ques`, `ansA`, `ansB`, `ansC`, `ansD`, `correctA
 (198, 'Which site visit most likely involves a stay at a Standard Class hotel?', '', '', '', '', 'c', 'img/imgQuestion/r12.png'),
 (199, 'On what topic does Mr. Bonner say he has no knowledge?', '', '', '', '', 'd', 'img/imgQuestion/r12.png'),
 (200, 'What does Mr. Bonner include with his e-mail?', '', '', '', '', 'c', 'img/imgQuestion/r12.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users_info`
+--
+
+CREATE TABLE `users_info` (
+  `fname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `lname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `pass` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `users_info`
+--
+
+INSERT INTO `users_info` (`fname`, `lname`, `email`, `pass`) VALUES
+('Huy', 'Dao', 'huy.daoanh@gmail.com', '11967d5e9addc5416ea9224eee0e91fc');
 
 --
 -- Indexes for dumped tables

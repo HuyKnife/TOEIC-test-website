@@ -1,11 +1,11 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "toeictest";
-    
-    // Create connection
-    $conn = mysqli_connect($servername, $username, $password, $dbname) or  die("Connection failed");
+    require_once("config/config.php");
+    session_start();
+
+    if (!isset($_SESSION['email'])) {
+    $_SESSION['msg'] = "You must log in first";
+    header('location: login.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -200,12 +200,15 @@
                     </p>
                 </div>
                 <?php 
-                    $query = "SELECT * FROM listening";
-                    $result = $conn->query($query);
-                    $count = 1;
-                    while($row = $result->fetch_assoc()){
+                    
+                    
                 ?>
                 <div id="questionDetail" style="display: none;">
+                    <?php
+                    for($i = 1; $i < 51; $i++){
+                        $query = "SELECT * FROM listening WHERE id = $i";
+                        $result = mysqli_query($conn, $query); 
+                    while($row = mysqli_fetch_array($result)) {?>
                     <div id="questionImage">
                         <div id="imagePart">
                             <img src="<?php echo $row['img']; ?>" alt="" class="img-thumbnail">';
@@ -214,6 +217,7 @@
                     <div id="questionPart">
                         <div id="question">
                             <!-- Nếu hết 10 câu hình thì phần imagePart mất để lại phần Question là chính -->
+                            <div><?php echo $row['ques']?></div>
                         </div>
                         <div id="answer">
                             <button type="button" class="btn btn-brand btn-twitter">A <br>
@@ -222,10 +226,10 @@
                                         <button type="button" class="btn btn-brand btn-twitter">D <br>
                         </div>
                     </div>
-                </div>
-                <?php 
-                    }
-                ?>
+                    <?php }
+                    } ?>
+                </div> 
+
             </div>
         </div>
 
