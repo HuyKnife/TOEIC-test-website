@@ -44,7 +44,8 @@ if (isset($_POST['reg_user'])) {
         $query = "INSERT INTO users_info (fname, lname, email, pass) 
   			  VALUES('$fname', '$lname', '$email', '$password')";
         mysqli_query($db, $query);
-        $_SESSION['username'] = $email;
+        $_SESSION['email'] = $email;
+        $_SESSION['username'] = $fname;
         $_SESSION['success'] = "You are now logged in";
         if ($result) {
             echo("<SCRIPT LANGUAGE='JavaScript'>
@@ -61,7 +62,7 @@ if (isset($_POST['login_user'])) {
     $password = mysqli_real_escape_string($db, $_POST['password']);
 
     if (empty($email)) {
-        array_push($errors, "Username is required");
+        array_push($errors, "Email is required");
     }
     if (empty($password)) {
         array_push($errors, "Password is required");
@@ -73,8 +74,9 @@ if (isset($_POST['login_user'])) {
         $results = mysqli_query($db, $query);
         if (mysqli_num_rows($results) == 1) {
             $_SESSION['email'] = $email;
+            $_SESSION['username'] = $fname;
             $_SESSION['success'] = "You are now logged in";
-            header('location: test.php');
+            header('location: index.php');
         } else {
             array_push($errors, "Wrong username/password combination");
         }
