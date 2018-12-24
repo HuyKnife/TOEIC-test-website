@@ -1,12 +1,7 @@
 <?php
-session_start();
-
-if (isset($_GET['logout'])) {
-    session_destroy();
-    unset($_SESSION['username']);
-    header("location: index.php");
-}
+    require_once("config/config.php");
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -32,141 +27,132 @@ if (isset($_GET['logout'])) {
 </head>
 
 <body>
-<nav class="">
-    <div class="container">
+        <nav class="">
+                <div class="container">
+                    
+                </div>
+            </nav>
+    <!-- Top navigation -->
+    <nav class="navbar navbar-expand-md fixed-top top-nav">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="img/toeicLogo2.png" alt=""></a>
+            <div id="top-right"><a href="login.php"><i class="fas fa-user"></i> Login</a></div>
+        </div>
+    </nav>
 
-    </div>
-</nav>
-<!-- Top navigation -->
-<nav class="navbar navbar-expand-md fixed-top top-nav">
-    <div class="container">
-        <a class="navbar-brand" href="#"><img src="img/toeicLogo2.png" alt=""></a>
-        <?php
-        if (!isset($_SESSION['email'])) {
-            echo "<div id=\"top-right\"><a href=\"login.php\"><i class=\"fas fa-user\"></i> Login</a></div>";
-        }
-        if (isset($_SESSION['email'])) {
-            echo "<div id=\"top-right\"><a href=''><i class=\"fas fa-user\"></i> Welcome " . $_SESSION['email'] . "</a><br>"
-                . "<a href='index.php?logout='1'>Log out</a>"
-                . "</div>";
-        }
-        ?>
-    </div>
-</nav>
-
-<!-- Intro Seven -->
-<section class="intro carousel slide bg-overlay-light h-auto" id="carouselExampleCaptions">
-    <ol class="carousel-indicators">
-        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="1" class=""></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-        <div class="carousel-item active">
-            <img class="d-block img-fluid" alt="First slide" src="img/page1.png">
-            <div class="carousel-caption ">
-                <h2 class="display-4 text-white mb-4 mt-4">Wanna have good score in TOEIC???</h2>
-                <a href="login.php" class="btn btn-primary btn-capsul px-4 py-2">Join Us Now!!!</a>
+    <!-- Intro Seven -->
+    <section class="intro carousel slide bg-overlay-light h-auto" id="carouselExampleCaptions">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1" class=""></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <img class="d-block img-fluid" alt="First slide" src="img/page1.png">
+                <div class="carousel-caption ">
+                    <h2 class="display-4 text-white mb-4 mt-4">Wanna have good score in TOEIC???</h2>
+                    <a href="#" class="btn btn-primary btn-capsul px-4 py-2">Join Us Now!!!</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block img-fluid" alt="First slide" src="img/page2.jpg">
+                <div class="carousel-caption ">
+                    <h2 class="display-4 text-white mb-4 mt-4">Accept the challenges ??? Do the test now.</h2>
+                    
+                    <a href="test.php" class="btn btn-primary btn-capsul px-4 py-2">Click here to do the TOEIC TEST</a>
+                </div>
             </div>
         </div>
-        <div class="carousel-item">
-            <img class="d-block img-fluid" alt="First slide" src="img/page2.jpg">
-            <div class="carousel-caption ">
-                <h2 class="display-4 text-white mb-4 mt-4">Accept the challenges ??? Do the test now.</h2>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </section>
 
-                <a href="test.php" class="btn btn-primary btn-capsul px-4 py-2">Click here to do the TOEIC TEST</a>
+    <!-- Info block 1 -->
+    <section class="info-section">
+        <div class="container">
+            <div class="head-box text-center mb-5">
+                <h2>We Are TOEICE TEST</h2>
+                <h6 class="text-underline-primary"><img src="img/toeicLogo.png" alt=""></h6>
+            </div>
+            <div class="three-panel-block mt-5">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="service-block-overlay text-center mb-5 p-lg-3">
+                            <i class="fa fa-laptop box-circle-solid mt-3 mb-3" aria-hidden="true"></i>
+                            <h3>Newest TEST</h3>
+                            <p class="px-4">Everyday We Update Newest TOEIC TEST </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="service-block-overlay text-center mb-5 p-lg-3">
+                            <i class="fa fa-calendar box-circle-solid mt-3 mb-3" aria-hidden="true"></i>
+                            <h3>We Have Test Schedule</h3>
+                            <p class="px-4">You Can Register For Real TOEIC TEST</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="service-block-overlay text-center mb-5 p-lg-3">
+                            <i class="fa fa-poll-h box-circle-solid mt-3 mb-3" aria-hidden="true"></i>
+                            <h3>Answer & Solutions</h3>
+                            <p class="px-4">When You Finish The Test, You Will Get The Result Immediately</p>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</section>
+    </section>
 
-<!-- Info block 1 -->
-<section class="info-section">
-    <div class="container">
-        <div class="head-box text-center mb-5">
-            <h2>We Are TOEICE TEST</h2>
-            <h6 class="text-underline-primary"><img src="img/toeicLogo.png" alt=""></h6>
-        </div>
-        <div class="three-panel-block mt-5">
+    <!-- Info block 1 -->
+    <section class="info-section bg-primary py-0">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="service-block-overlay text-center mb-5 p-lg-3">
-                        <i class="fa fa-laptop box-circle-solid mt-3 mb-3" aria-hidden="true"></i>
-                        <h3>Newest TEST</h3>
-                        <p class="px-4">Everyday We Update Newest TOEIC TEST </p>
+                <div class="col-md-6 col-lg-6 content-half mt-md-0 pl-5 pt-4">
+                    <div class="head-box mb-5 pl-5 mt-2">
+                        <h2 class="text-white">Our Story</h2>
+                        <h6 class="text-white text-underline-rb-white"><img src="img/toeicLogo.png" alt=""></h6>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="service-block-overlay text-center mb-5 p-lg-3">
-                        <i class="fa fa-calendar box-circle-solid mt-3 mb-3" aria-hidden="true"></i>
-                        <h3>We Have Test Schedule</h3>
-                        <p class="px-4">You Can Register For Real TOEIC TEST</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="service-block-overlay text-center mb-5 p-lg-3">
-                        <i class="fa fa-poll-h box-circle-solid mt-3 mb-3" aria-hidden="true"></i>
-                        <h3>Answer & Solutions</h3>
-                        <p class="px-4">When You Finish The Test, You Will Get The Result Immediately</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Info block 1 -->
-<section class="info-section bg-primary py-0">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6 col-lg-6 content-half mt-md-0 pl-5 pt-4">
-                <div class="head-box mb-5 pl-5 mt-2">
-                    <h2 class="text-white">Our Story</h2>
-                    <h6 class="text-white text-underline-rb-white"><img src="img/toeicLogo.png" alt=""></h6>
-                </div>
-                <ul class="pl-5">
-                    <li>
-                        <i class="fa fa-laptop box-round-outline" aria-hidden="true"></i>
-                        <span class="list-content">
+                    <ul class="pl-5">
+                        <li>
+                            <i class="fa fa-laptop box-round-outline" aria-hidden="true"></i>
+                            <span class="list-content">
                                 <strong>Help Student Learn English</strong>
                                 <br>To Get The Best Result By Practice Online.
                             </span>
-                    </li>
-                    <li>
-                        <i class="fa fa-database box-round-outline" aria-hidden="true"></i>
-                        <span class="list-content">
+                        </li>
+                        <li>
+                            <i class="fa fa-database box-round-outline" aria-hidden="true"></i>
+                            <span class="list-content">
                                 <strong>Huge Database With TOEIC TEST</strong>
                                 <br>You Can Do Many Test As You Can!.
                             </span>
-                    </li>
-                    <li>
-                        <i class="fa fa-donate box-round-outline" aria-hidden="true"></i>
-                        <span class="list-content">
+                        </li>
+                        <li>
+                            <i class="fa fa-donate box-round-outline" aria-hidden="true"></i>
+                            <span class="list-content">
                                 <strong>It's Free</strong>
                                 <br>If You Can, Donate Us.
                             </span>
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6 p-0 m-0">
+                    <img src="https://grafreez.com/wp-content/temp_demos/suffi/img/intro-bg.jpg" class="img-fluid">
+                </div>
             </div>
-            <div class="col-md-6 p-0 m-0">
-                <img src="https://grafreez.com/wp-content/temp_demos/suffi/img/intro-bg.jpg" class="img-fluid">
-            </div>
-        </div>
-</section>
+    </section>
 
 </body>
 
 <script>
     // Sticky Header
-    $(window).scroll(function () {
+    $(window).scroll(function() {    
         var scroll = $(window).scrollTop();
 
         if (scroll >= 100) {
@@ -177,7 +163,7 @@ if (isset($_GET['logout'])) {
     });
 
     // Year for copy content
-    $(function () {
+    $(function(){
         var theYear = new Date().getFullYear();
         $('#year').html(theYear);
     });
