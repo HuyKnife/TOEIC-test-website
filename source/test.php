@@ -224,10 +224,10 @@
                                 <div><?php echo $row['id'] ?></div>
                                 <img src="<?php echo $row['img'] ?>" alt="" class="img-thumbnail">
                                 <div id="answer" style = "display: inline-block; float: right">
-                                <button type="button" class="btn btn-brand btn-twitter">A <br>
-                                    <button type="button" class="btn btn-brand btn-twitter">B <br>
-                                        <button type="button" class="btn btn-brand btn-twitter">C <br>
-                                            <button type="button" class="btn btn-brand btn-twitter">D <br>
+                                <button type="button" class="btn btn-brand btn-twitter">A. <br>
+                                    <button type="button" class="btn btn-brand btn-twitter">B. <br>
+                                        <button type="button" class="btn btn-brand btn-twitter">C. <br>
+                                            <button type="button" class="btn btn-brand btn-twitter">D. <br>
                                 </div>
                             </div>
                         </div>
@@ -251,10 +251,10 @@
                             <div id="imagePart">
                                 <div id="answer">
                                 <?php echo $row['id'] ?>
-                                <button type="button" class="btn btn-brand btn-twitter">A <br>
-                                    <button type="button" class="btn btn-brand btn-twitter">B <br>
-                                        <button type="button" class="btn btn-brand btn-twitter">C <br>
-                                            <button type="button" class="btn btn-brand btn-twitter">D <br>
+                                <button type="button" class="btn btn-brand btn-twitter">A. <br>
+                                    <button type="button" class="btn btn-brand btn-twitter">B. <br>
+                                        <button type="button" class="btn btn-brand btn-twitter">C. <br>
+                                            <button type="button" class="btn btn-brand btn-twitter">D. <br>
                                 </div>
                             </div>
                         </div>
@@ -274,16 +274,19 @@
                     ?>
                     <div id = "container-fluid">
                         <div id="container-fluid">
-                            <div id="imagePart">
+                            <div id="quest-detail">
                                 <div id="answer">
                                 <?php echo $row['id'] ?>
                                 <?php echo $row['ques'] ?>
-                                <button type="button" class="btn btn-brand btn-twitter">A <?php echo $row['ansA'] ?><br>
-                                    <button type="button" class="btn btn-brand btn-twitter">B <?php echo $row['ansB'] ?><br>
-                                        <button type="button" class="btn btn-brand btn-twitter">C <?php echo $row['ansC'] ?><br>
-                                            <button type="button" class="btn btn-brand btn-twitter">D <?php echo $row['ansD'] ?><br>
+                                <br>
                                 </div>
                             </div>
+                        </div>
+                        <div id="ans">
+                        <button type="button" class="btn btn-brand" style="margin-right: 10px; margin-top: 10px; margin-bottom: 10px;">A. <?php echo $row['ansA'] ?><br>
+                                    <button type="button" class="btn btn-brand" style="margin-right: 10px; margin-top: 10px; margin-bottom: 10px;">B. <?php echo $row['ansB'] ?><br>
+                                        <button type="button" class="btn btn-brand" style="margin-right: 10px; margin-top: 10px; margin-bottom: 10px;">C. <?php echo $row['ansC'] ?><br>
+                                            <button type="button" class="btn btn-brand" style="margin-right: 10px; margin-top: 10px; margin-bottom: 10px;">D. <?php echo $row['ansD'] ?><br>
                         </div>
                     </div>
                     <?php 
