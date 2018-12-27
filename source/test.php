@@ -277,10 +277,11 @@
                             <div id="imagePart">
                                 <div id="answer">
                                 <?php echo $row['id'] ?>
-                                <button type="button" class="btn btn-brand btn-twitter">A <br>
-                                    <button type="button" class="btn btn-brand btn-twitter">B <br>
-                                        <button type="button" class="btn btn-brand btn-twitter">C <br>
-                                            <button type="button" class="btn btn-brand btn-twitter">D <br>
+                                <?php echo $row['ques'] ?>
+                                <button type="button" class="btn btn-brand btn-twitter">A <?php echo $row['ansA'] ?><br>
+                                    <button type="button" class="btn btn-brand btn-twitter">B <?php echo $row['ansB'] ?><br>
+                                        <button type="button" class="btn btn-brand btn-twitter">C <?php echo $row['ansC'] ?><br>
+                                            <button type="button" class="btn btn-brand btn-twitter">D <?php echo $row['ansD'] ?><br>
                                 </div>
                             </div>
                         </div>
