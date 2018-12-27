@@ -52,19 +52,27 @@
                 $("#Direction").hide();
                 $("#clock").show();
             });
-            $("#startAudioClick").click(function(){
+            $("#startAudioClick").click(function () {
                 $("#label-warning").fadeOut();
                 $("#main-part").fadeIn(4000);
-                $("#questionDetail").fadeIn(4000);
+                $("#q0").fadeIn(4000);
                 $("#next").fadeIn(4000);
                 $("#Direction").fadeIn(4000);
             });
-            $("#next").click(function(){
-                y.pause();
-                $("#next").hide();
-                $("#main-part").fadeOut();
-                $("#result").fadeIn(4000);
+            $("#next").on('click', function() {
+                $('#questions>div').each(function() {
+                var id = $(this).index();
+                if ($(this).is(':visible')) {
+                    $(this).hide();
+                    if (id == $('#questions>div').length - 1) {
+                        $('#questions>div').eq(0).show();
+                    } else {
+                        $('#questions>div').eq(id + 1).show();
+                    }
+                    return false;
+                }
             });
+    });
         });
     </script>
 </head>
@@ -161,12 +169,14 @@
                         </div>
                         <script>
                             var y = document.getElementById("audioReady"); 
+                            var audioButton = document.getElementById("startAudioClick")
                             
                             function startAudio() { 
                                 y.play(); 
                                 var fiveMinutes = 60 * 45,
                                 display = document.querySelector('#time');
                                 startTimer(fiveMinutes, display);
+                                audioButton.disabled = true;
                             } 
 
                             function startTimer(duration, display) {
@@ -199,37 +209,88 @@
                         spoken only one time.
                     </p>
                 </div>
-                <?php 
-                    
-                    
-                ?>
-                <div id="questionDetail" style="display: none;">
+                
+                <div id="questions">
+                    <div id="q0" style="display: none;">
                     <?php
-                    for($i = 1; $i < 51; $i++){
-                        $query = "SELECT * FROM listening WHERE id = $i";
-                        $result = mysqli_query($conn, $query); 
-                    while($row = mysqli_fetch_array($result)) {?>
-                    <div id="questionImage">
-                        <div id="imagePart">
-                            <img src="<?php echo $row['img']; ?>" alt="" class="img-thumbnail">';
+                        for($i = 1; $i < 11; $i++) {
+                            $query = "SELECT * FROM listening where id = $i";
+                            $result = $conn->query($query);
+                            while($row = $result->fetch_assoc()) {
+                    ?>
+                    <div id = "container-fluid">
+                        <div id="container-fluid"  style ="margin: 20px 0px">
+                            <div id="imagePart">
+                                <div><?php echo $row['id'] ?></div>
+                                <img src="<?php echo $row['img'] ?>" alt="" class="img-thumbnail">
+                                <div id="answer" style = "display: inline-block; float: right">
+                                <button type="button" class="btn btn-brand btn-twitter">A <br>
+                                    <button type="button" class="btn btn-brand btn-twitter">B <br>
+                                        <button type="button" class="btn btn-brand btn-twitter">C <br>
+                                            <button type="button" class="btn btn-brand btn-twitter">D <br>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div id="questionPart">
-                        <div id="question">
-                            <!-- Nếu hết 10 câu hình thì phần imagePart mất để lại phần Question là chính -->
-                            <div><?php echo $row['ques']?></div>
-                        </div>
-                        <div id="answer">
-                            <button type="button" class="btn btn-brand btn-twitter">A <br>
-                                <button type="button" class="btn btn-brand btn-twitter">B <br>
-                                    <button type="button" class="btn btn-brand btn-twitter">C <br>
-                                        <button type="button" class="btn btn-brand btn-twitter">D <br>
-                        </div>
+                    <?php 
+                        }
+                    }
+                    ?>
                     </div>
-                    <?php }
-                    } ?>
-                </div> 
 
+
+                    <div id="q1" style="display: none;">
+                    <?php
+                        for($i = 11; $i < 41; $i++) {
+                            $query = "SELECT * FROM listening where id = $i";
+                            $result = $conn->query($query);
+                            while($row = $result->fetch_assoc()) {
+                    ?>
+                    <div id = "container-fluid">
+                        <div id="container-fluid">
+                            <div id="imagePart">
+                                <div id="answer">
+                                <?php echo $row['id'] ?>
+                                <button type="button" class="btn btn-brand btn-twitter">A <br>
+                                    <button type="button" class="btn btn-brand btn-twitter">B <br>
+                                        <button type="button" class="btn btn-brand btn-twitter">C <br>
+                                            <button type="button" class="btn btn-brand btn-twitter">D <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php 
+                        }
+                    }
+                    ?>
+                    </div> 
+                
+                    <div id="q2" style="display: none;">
+                    <?php
+                        for($i = 41; $i < 101; $i++) {
+                            $query = "SELECT * FROM listening where id = $i";
+                            $result = $conn->query($query);
+                            while($row = $result->fetch_assoc()) {
+                    ?>
+                    <div id = "container-fluid">
+                        <div id="container-fluid">
+                            <div id="imagePart">
+                                <div id="answer">
+                                <?php echo $row['id'] ?>
+                                <button type="button" class="btn btn-brand btn-twitter">A <br>
+                                    <button type="button" class="btn btn-brand btn-twitter">B <br>
+                                        <button type="button" class="btn btn-brand btn-twitter">C <br>
+                                            <button type="button" class="btn btn-brand btn-twitter">D <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php 
+                        }
+                    }
+                    ?>
+                    </div> 
+                </div>
             </div>
         </div>
 

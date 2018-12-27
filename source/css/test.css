@@ -5,8 +5,11 @@
 div.intro {
     position: -webkit-sticky;
     position: sticky;
-    border-style: dotted;
     height: 800px;
+}
+
+div.questions {
+    border: dotted;
 }
 
 #title-intro, #title-sol {
@@ -58,7 +61,8 @@ div.intro {
 #next {
     float: right;
     width: 100px;
-    margin-top: 250px;
+    margin-top: 150px;
+    margin-bottom: 50px;
 }
 
 #clockPart {
