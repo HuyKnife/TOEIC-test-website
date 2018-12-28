@@ -67,7 +67,7 @@
                 <img class="d-block img-fluid" alt="First slide" src="img/page1.png">
                 <div class="carousel-caption ">
                     <h2 class="display-4 text-white mb-4 mt-4">Wanna have good score in TOEIC???</h2>
-                    <a href="#" class="btn btn-primary btn-capsul px-4 py-2">Join Us Now!!!</a>
+                    <a href="login.php" class="btn btn-primary btn-capsul px-4 py-2">Join Us Now!!!</a>
                 </div>
             </div>
             <div class="carousel-item">
